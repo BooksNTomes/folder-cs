@@ -14,12 +14,7 @@ if __name__ == "__main__":
 
         for entry in entries:
             name = entry.name
-            check_files(audio_extensions, dest_dir_music, entry, name)
-            check_files(video_extensions, dest_dir_video, entry, name)
-            check_files(image_extensions, dest_dir_image, entry, name)
-            check_files(document_extensions, dest_dir_documents, entry, name)
-            check_files(executable_extensions, dest_dir_executables, entry, name)
-            check_files(zip_extensions, dest_dir_zips, entry, name)
-            check_files(code_extensions, dest_dir_code, entry, name)
-
+            for i in range(DIR_COUNT):
+                check_files(ext[i], dest[i], entry, name)
+            
     input("Enter to Exit")
