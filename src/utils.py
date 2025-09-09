@@ -1,7 +1,7 @@
 from os import rename
 from os.path import exists, splitext, exists, join
 from shutil import move
-from sources import *
+from .sources import *
 
 def make_unique(dest, name):
     filename, extension = splitext(name)
