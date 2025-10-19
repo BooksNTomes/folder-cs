@@ -1,16 +1,22 @@
-# Targeted Folder: Modifiy When Needed
-FOLDER_PATH = "C:\\Users\\user\\Downloads"
+from dotenv import load_dotenv
+from os import getenv
+from os.path import join
+
+load_dotenv()
+
+FOLDER_PATH = getenv('FOLDER_PATH') 
 # Update all of these when needed
 # Order: image - video - audio - documents - executables - zips - code
 
 # Destinations
-image_dest = f"{FOLDER_PATH}\\images"
-video_dest = f"{FOLDER_PATH}\\videos"
-audio_dest = f"{FOLDER_PATH}\\audio"
-documents_dest = f"{FOLDER_PATH}\\documents"
-executables_dest = f"{FOLDER_PATH}\\executables"
-zips_dest = f"{FOLDER_PATH}\\zips"
-code_dest = f"{FOLDER_PATH}\\code"
+image_dest = join(FOLDER_PATH, "images")
+video_dest = join(FOLDER_PATH, "videos")
+audio_dest = join(FOLDER_PATH, "audio")
+documents_dest = join(FOLDER_PATH, "documents")
+executables_dest = join(FOLDER_PATH, "executables")
+installers_dest = join(FOLDER_PATH, "installers")
+zips_dest = join(FOLDER_PATH, "zips")
+code_dest = join(FOLDER_PATH, "code")
 # Master Destination List
 dest = [image_dest, 
         video_dest, 
@@ -31,7 +37,8 @@ audio_ext       = [".m4a", ".flac", "mp3", ".wav", ".wma", ".aac",]
 document_ext    = [".doc", ".docx", ".odt", ".ods",
                        ".pdf", ".xls", ".xlsx", ".ppt", ".pptx", 
                        ".csv",]
-executable_ext  = [".exe", ".jar", ".msi",]
+executable_ext  = [".exe", ".jar", ".AppImage"]
+installers_ext  = [".msi", ".deb", ".tar.gz"]
 zip_ext         = [".zip", ".rar",]
 code_ext        = [".ipynb", ".py", ".c", ".java", ".js", ".html", ".css", ".cpp", ".lua", ".gd", 
                    ".txt",]
