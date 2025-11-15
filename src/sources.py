@@ -9,20 +9,21 @@ FOLDER_PATH = getenv('FOLDER_PATH')
 # Order: image - video - audio - documents - executables - zips - code
 
 # Destinations
-image_dest = join(FOLDER_PATH, "images")
-video_dest = join(FOLDER_PATH, "videos")
-audio_dest = join(FOLDER_PATH, "audio")
-documents_dest = join(FOLDER_PATH, "documents")
-executables_dest = join(FOLDER_PATH, "executables")
-installers_dest = join(FOLDER_PATH, "installers")
-zips_dest = join(FOLDER_PATH, "zips")
-code_dest = join(FOLDER_PATH, "code")
+image_dest = join(FOLDER_PATH, "images") # type: ignore
+video_dest = join(FOLDER_PATH, "videos") # type: ignore
+audio_dest = join(FOLDER_PATH, "audio") # type: ignore
+documents_dest = join(FOLDER_PATH, "documents") # type: ignore
+executables_dest = join(FOLDER_PATH, "executables") # type: ignore
+installers_dest = join(FOLDER_PATH, "installers") # type: ignore
+zips_dest = join(FOLDER_PATH, "zips") # type: ignore
+code_dest = join(FOLDER_PATH, "code") # type: ignore
 # Master Destination List
 dest = [image_dest, 
         video_dest, 
         audio_dest, 
         documents_dest, 
         executables_dest, 
+        installers_dest,
         zips_dest, 
         code_dest,]
 
@@ -36,7 +37,7 @@ video_ext       = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".ogg", ".m
 audio_ext       = [".m4a", ".flac", "mp3", ".wav", ".wma", ".aac",]
 document_ext    = [".doc", ".docx", ".odt", ".ods",
                        ".pdf", ".xls", ".xlsx", ".ppt", ".pptx", 
-                       ".csv",]
+                       ".csv", ".json"]
 executable_ext  = [".exe", ".jar", ".AppImage"]
 installers_ext  = [".msi", ".deb", ".tar.gz"]
 zip_ext         = [".zip", ".rar",]
@@ -48,6 +49,7 @@ ext = [image_ext,
      audio_ext,
      document_ext,
      executable_ext,
+     installers_ext,
      zip_ext,
      code_ext,]
 
